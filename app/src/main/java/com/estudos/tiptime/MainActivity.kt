@@ -24,7 +24,12 @@ class MainActivity : AppCompatActivity() {
 
     private fun setClickListeners() {
         binding.calculateButton.setOnClickListener { calculateTip() }
-        binding.costOfServiceEditText.setOnKeyListener { view, keyCode, _ -> handleKeyEvent(view, keyCode) }
+        binding.costOfServiceEditText.setOnKeyListener { view, keyCode, _ ->
+            handleKeyEvent(
+                view,
+                keyCode
+            )
+        }
     }
 
     private fun calculateTip() {
@@ -53,9 +58,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun getPercentage(): Double {
         return when (binding.tipOptions.checkedRadioButtonId) {
-            R.id.option_twenty_percent -> 0.20
-            R.id.option_eighteen_percent -> 0.18
-            else -> 0.15
+            R.id.option_twenty_percent -> TIP_TWENTY_PERCENT
+            R.id.option_eighteen_percent -> TIP_EIGHTEEN_PERCENT
+            else -> TIP_FIFTEEN_PERCENT
         }
     }
 
@@ -68,6 +73,12 @@ class MainActivity : AppCompatActivity() {
             return true
         }
         return false
+    }
+
+    companion object {
+        const val TIP_TWENTY_PERCENT = 0.20
+        const val TIP_EIGHTEEN_PERCENT = 0.18
+        const val TIP_FIFTEEN_PERCENT = 0.15
     }
 }
 
