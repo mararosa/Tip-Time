@@ -14,7 +14,7 @@
     </style>
 
     <style name="Widget.TipTime.CompoundButton.RadioButton" parent="Widget.MaterialComponents.CompoundButton.RadioButton">
-        <item name="android:paddingStart">8dp</item>
+        <item name="android:paddingStart">@dimen/padding_radio_button</item>
         <item name="android:textAppearance">?attr/textAppearanceBody1</item>
     </style>
 </resources>
